@@ -1,0 +1,40 @@
+apiVersion: v1
+data:
+  CATALOGUE_API: http://catalogue-service
+  CHIPER_POS_CERTIFICATE: /var/secrets/firebase/credentials.json
+  COMUNITY_API: http://community-api
+  COUPONS_SERVICE: http://chiper-micro-cupones-service/
+  ENVIROMENT: DEVELOP
+  GENERATE_PDF_API: http://chiper-generate-pdf-service/
+  LB_API_SERVICE: http://lb-api-chiper-service:3000
+  LB_API_TOKEN: 1d90c01f8aa1e13490aa7f2e238df598
+  OPERATIONAL_TOKEN: 03bcbd63-2fd6-44ce-bd70-609915bb1e69
+  PORT: "3000"
+  POS_LB_API_SERVICE: http://pos-lb-api
+  REDIS_HOST: memorystore
+  REDIS_PORT: "6379"
+  TYPEORM_CACHE: "true"
+  TYPEORM_CONNECTION: postgres
+  TYPEORM_ENTITIES: build/entities/*.js
+  TYPEORM_ENTITIES_DIR: src/entities
+  TYPEORM_LOGGING: "true"
+  TYPEORM_MIGRATIONS: src/migrations/*.ts
+  TYPEORM_MIGRATIONS_DIR: src/migration
+  TYPEORM_MIGRATIONS_TABLE_NAME: Migration
+  TYPEORM_PORT: "5432"
+  TYPEORM_SCHEMA: public
+  TYPEORM_SYNCHRONIZE: "false"
+  VIDEO_TOPIC: beta_video
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"ENVIROMENT":"DEVELOP","PORT":"3000","TYPEORM_CONNECTION":"postgres","TYPEORM_DATABASE":"pos","TYPEORM_ENTITIES":"src/entities/*.js","TYPEORM_HOST":"10.196.129.3","TYPEORM_LOGGING":"true","TYPEORM_PASSWORD":"3ExnhGMDgCoPjCDI","TYPEORM_PORT":"5432","TYPEORM_SYNCHRONIZE":"false","TYPEORM_USERNAME":"vivoPOS"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app":"chiper"},"name":"config-pos","namespace":"default"}}
+  creationTimestamp: "2019-11-07T20:00:18Z"
+  labels:
+    app: chiper
+  name: config-pos
+  namespace: default
+  resourceVersion: "450771181"
+  selfLink: /api/v1/namespaces/default/configmaps/config-pos
+  uid: 38d2d518-0199-11ea-ac14-4201ac100024
