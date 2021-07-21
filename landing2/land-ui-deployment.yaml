@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pos-landing-ui
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: pos-landing-ui
+  template:
+    metadata:
+      labels:
+        app: pos-landing
+    spec:
+      containers:
+      - image: us.gcr.io/dataflow-chiper/pos-landing:latest
+        name: pos-landing
+        ports:
+        - containerPort: 80
